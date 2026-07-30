@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width">
+        
+        <title>Philippines</title>
+
+        <style>
+
+            *{
+
+                padding: 0;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+
+            html{
+
+                scroll-behavior: smooth;
+
+            }
+
+            body{
+
+                padding: 5px;
+                margin: 5px;
+
+            }
+
+            .hero{
+
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+
+            }
+            
+            .hero::before{
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.45);
+
+            }
+
+            .hero-content{
+
+                position: relative;
+                z-index: 1;
+                width: 80%;
+                max-width: 800px;
+                padding: 20px;
+
+            }
+
+            .hero-content h1{
+
+                font-size: 60px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+
+            }
+
+            .hero-content p{
+
+                font-size: 22px;
+                line-height: 1.8;
+                margin-bottom: 35px;
+
+            }
+
+            .centered{
+
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+            }
+
+            .btn{
+
+                display: inline-block;
+                padding: 15px 35px;
+                background: #ff9800;
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                font-size: 18px;
+                font-weight: bold;
+                transition: 0.3s;
+
+            }
+
+            .btn:hover{
+
+                background: #ff6f00;
+                transform: scale(1.05);
+
+            }
+
+            .btn:active{
+
+                transform: scale(0.95);
+
+            }
+
+            #destinations{
+
+                width: 90%;
+                margin: 80px auto;
+                text-align: center;
+
+            }
+
+            #destinations h2{
+
+                font-size: 40px;
+                color: #0066cc;
+                margin-bottom: 40px;
+                position: relative;
+                display: inline-block;
+
+            }
+
+            #destinations h2::after{
+
+                width: 80px;
+                height: 4px;
+                background: #ff9900;
+                display: block;
+                margin: 10px auto 0;
+                border-radius: 5px;
+
+            }
+
+            .gallery{
+
+                gap: 25px;
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+
+            .gallery-item{
+
+                background: #ffffff;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,.2);
+                transition: .3s;
+                padding-bottom: 20px;
+
+            }
+
+            .gallery-item:hover{
+
+                transform: translateY(-10px);
+                box-shadow: 0 10px 25px rgba(0,0,0,.3);
+
+            }
+
+            .gallery-item img{
+
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                transition: .3s;
+
+            }
+
+            .gallery-item h3{
+
+                margin-top: 20px;
+                font-size: 24px;
+                color: #333;
+
+            }
+
+            #packages{
+
+                width: 90%;
+                margin: 80px auto;
+                text-align: center;
+
+            }
+
+            #packages h2{
+
+                font-size: 40px;
+                color: #0066cc;
+                margin-bottom: 40px;
+                position: relative;
+                display: inline-block;
+
+            }
+
+            #packages h2::after{
+
+
+                width: 80px;
+                height: 4px;
+                display: block;
+                margin: 10px auto;
+                border-radius: 5px;
+
+            }
+
+            .package-container{
+
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+                gap: 30px;
+                flex-wrap: wrap;
+
+            }
+
+            .package-card{
+
+                width: 320px;
+                background: #ffffff;
+                border-radius: 12px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,.2);
+                transition: .3s;
+
+            }
+
+            .package-card:hover{
+
+                transform: translateY(-10px);
+                box-shadow: 0 10px 25px rgba(0,0,0,.3);
+
+            }
+
+            .package-card h3{
+
+                font-size: 28px;
+                color: #0066cc;
+                margin-bottom: 10px;
+
+            }
+
+            .package-card h4{
+
+                font-size: 34px;
+                color: #ff9900;
+                margin-bottom: 25px;
+
+            }
+
+            .package-card ul{
+
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+            }
+
+            .package-card ul li{
+
+                padding: 12px 0;
+                border-bottom: 1px solid #ddd;
+                color: #555;
+                font-size: 17px;
+
+            }
+
+            .package-card ul li:last-child{
+
+                border-bottom: none;
+
+            }
+
+            .package-card button{
+
+                margin-top: 25px;
+                padding: 12px 25px;
+                background: #0066cc;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: .3s;
+
+            }
+
+            .package-card button:hover{
+
+                background: #ff9900;
+
+            }
+
+            #calculator{
+
+                width: 80%;
+                margin: 80px auto;
+                padding: 40px;
+                background: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,.2);
+                text-align: center;
+
+            }
+
+            #calculator h2{
+
+                font-size: 40px;
+                color: #0066cc;
+                margin-bottom: 30px;
+                position: relative;
+                display: inline-block;
+
+            }
+
+            #calculator h2::after{
+
+                width: 80px;
+                height: 4px;
+                background: #ff9900;
+                display: block;
+                margin: 10px auto 0;
+                border-radius: 5px;
+
+            }
+
+            #calculator label{
+
+                display: block;
+                font-size: 18px;
+                color: #444;
+                margin-top: 15px;
+
+            }
+
+            #calculator input{
+
+                width: 280px;
+                padding: 12px;
+                border: 2px solid #0066cc;
+                border-radius: 5px;
+                font-size: 16px;
+                text-align: center;
+                outline: none;
+
+            }
+
+            #calculator input:focus{
+
+                border-color: #ff9900;
+                box-shadow: 0 0 8px rgba(255,153,0,.5);
+
+            }
+
+            #calculator button{
+
+                margin-top: 25px;
+                padding: 12px 30px;
+                background: #0066cc;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: .3s;
+
+            }
+
+            #calculator button:hover{
+
+                background: #ff9900;
+
+            }
+
+            #total{
+
+                margin-top: 30px;
+                padding: 20px;
+                background: #f5f5f5;
+                border-radius: 5px;
+                font-size: 24px;
+                color: #333;
+
+            }
+
+            #discount{
+
+                width: 80%;
+                margin: 80px auto;
+                padding: 40px;
+                background: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,.2);
+                text-align: center;
+
+            }
+
+            #discount h2{
+
+                font-size: 40px;
+                color: #0066cc;
+                margin-bottom: 30px;
+                position: relative;
+                display: inline-block;
+
+            }
+
+            #discount h2::after{
+
+                width: 80px;
+                height: 4px;
+                background: #ff9900;
+                display: block;
+                margin: 10px auto 0;
+                border-radius: 5px;
+
+            }
+
+            #discount label{
+
+                display: block;
+                font-size: 18px;
+                color: #444;
+                margin-bottom: 10px;
+
+            }
+
+            #discount input{
+
+                width: 280px;
+                padding: 12px;
+                font-size: 16px;
+                text-align: center;
+                border: 2px solid #0066cc;
+                border-radius: 5px;
+                outline: none;
+
+            }
+
+            #discount input:focus{
+
+                border-color: #ff9900;
+                box-shadow: 0 0 8px rgba(255,153,0,.5);
+
+            }
+
+            #discount button{
+
+                margin-top: 20px;
+                padding: 12px 30px;
+                font-size: 16px;
+                background: #0066cc;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: .3s;
+
+            }
+
+            #discount button:hover{
+ 
+                background: #ff9900;
+
+            }
+
+            #discountResult{
+
+                margin-top: 30px;
+                padding: 20px;
+                background: #f5f5f5;
+                border-radius: 5px;
+                font-size: 24px;
+                color: #333;
+
+            }
+
+            #countdown{
+
+                width: 80%;
+                margin: 80px auto;
+                padding: 40px;
+                background: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                text-align: center;
+
+            }
+
+            #countdown h2{
+
+                font-size: 36px;
+                color: #0066cc;
+                margin-bottom: 15px;
+
+            }
+
+            #countdown label{
+
+                font-size: 18px;
+                color: #444;
+
+            }
+
+            #countdown input{
+
+                width: 250px;
+                padding: 12px;
+                margin-top: 15px;
+                border: 2px solid #0066cc;
+                border-radius: 5px;
+                font-size: 16px;
+                text-align: center;
+                outline: none;
+
+            }
+
+            #countdown input:focus{
+
+                border-color: #ff9900;
+                box-shadow: 0 0 8px rgba(255,153,0,.5);
+
+            }
+
+            #countdown button{
+
+                margin-top: 20px;
+                padding: 12px 25px;
+                font-size: 16px;
+                background: #0066cc;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: .3s;
+
+            }
+
+            #countdown button:hover{
+
+                background: #ff9900;
+
+            }
+
+            #result{
+
+                margin-top: 25px;
+                padding: 20px;
+                background: #f5f5f5;
+                border-radius: 5px;
+                font-size: 18px;
+                color: #333;
+                line-height: 1.8;
+
+            }
+
+            @media screen and (max-width:768px){
+
+                #destinations{
+
+                    width: 95%;
+
+                }
+
+                #destinations h2{
+
+                    font-size: 30px;
+
+                }
+
+                .gallery{
+
+                    grid-template-columns: 1fr;
+
+                }
+
+                .package-container{
+
+                    flex-direction: column;
+                    align-items: center;
+
+                }
+
+                .package-card{
+
+                    width: 90%;
+
+                }
+
+                #packages h2{
+
+                    font-size: 32px;
+
+                }
+
+                #calculator{
+
+                    width: 95%;
+                    padding: 25px;
+
+                }
+
+                #calculator h2{
+
+                    font-size: 32px;
+
+                }
+
+                #calculator input{
+
+                    width: 100%;
+
+                }
+
+                #calculator button{
+
+                    width: 100%;
+
+                }
+
+                #discount{
+
+                    width: 95%;
+                    padding: 25px;
+
+                }
+
+                #discount h2{
+
+                    font-size: 32px;
+
+                }
+
+                #discount input{
+
+                    width: 100%;
+
+                }
+
+                #discount button{
+
+                    width: 100%;
+
+                }
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <section id="home" class="hero">
+            
+            <div class="hero-content">
+        
+                <h1>Travel Explorer Philippines</h1>
+        
+                <p>Discover the breathtaking beauty of the Philippines. 
+                    Explore stunning beaches,majestic mountains, historic landmarks, and unforgettable adventures.</p>
+
+                <div class="centered">
+
+                    <a href="#home" class="btn">Home</a>
+                    
+                    <a href="#destinations" class="btn">Explore Destinations</a>
+
+                    <a href="#packages" class="btn">Travel Packges</a>
+                
+                    <a href="#calculator" class="btn">Trip Cost</a>
+
+                    <a href="#discount" class="btn">Discount Checker</a>
+
+                    <a href="#countdown" class="btn">Travel Countdown</a>
+            
+                </div>
+
+            </div>
+
+        </section>
+
+        <br><br>
+
+        <section id="destinations">
+
+            <h2>Popular Destinations</h2>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+
+                    <img src="images/boracay.webp" alt="Boracay">
+
+                    <h3>Boracay</h3>
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img src="images/Palawan.webp" alt="Palawan">
+
+                    <h3>Palawan</h3>
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img src="images/baguio.webp" alt="Baguio">
+
+                    <h3>Baguio</h3>
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img src="images/manila.webp" alt="Manila">
+
+                    <h3>Manila</h3>
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img src="images/pangasinan.webp" alt="Pangasinan">
+
+                    <h3>Pangasinan</h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <br><br>
+
+        <section id="packages">
+
+            <h2>Travel Packages</h2>
+
+            <div class="package-container">
+
+                <div class="package-card">
+
+                    <h3>Basic Package</h3>
+
+                        <h4>&#8369 3,999</h4>
+
+                    <ul>
+                
+                        <li>2 Days / 1 Night</li>
+                
+                        <li>Hotel Accommodation</li>
+                
+                        <li>Free Breakfast</li>
+                
+                        <li>Transportation</li>
+                    
+                    </ul>
+
+                </div>
+
+                <br><br>
+
+                <div class="package-card">
+
+                    <h3>Premium Package</h3>
+
+                    <h4>&#8369 12,999</h4>
+
+                    <ul>
+                
+                        <li>5 Days / 4 Nights</li>
+                
+                        <li>Luxury Resort</li>
+                
+                        <li>Airport Transfer</li>
+                
+                        <li>Island Hopping</li>
+            
+                    </ul>
+
+                </div>
+
+                <br><br>
+
+                <div class="package-card">
+
+                    <h3>Family Package</h3>
+
+                    <h4>&#8369 18,999</h4>
+
+                    <ul>
+                
+                        <li>4 Days / 3 Nights</li>
+                
+                        <li>Family Room</li>
+                
+                        <li>Transportation</li>
+                
+                        <li>Free Activities</li>
+            
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <br><br>
+
+        <section id="calculator">
+
+            <h2>Trip Cost Calculator</h2>
+
+            <label>Number of Travelers</label>
+                
+            <br>
+    
+            <input 
+            type="number" 
+            name="traveler"
+            id="traveler">
+                
+            <br><br>
+
+            <label>Package Price</label>
+                
+            <br>
+    
+            <input 
+            type="number" 
+            name="price" 
+            id="price">
+                
+            <br><br>
+
+            <button onclick="calculateCost()">Calculate</button>
+
+            <h3 id="total"></h3>
+
+            <script>
+
+                function calculateCost(){
+
+                    let travelers = Number(document.getElementById("traveler").value);
+                    let price = Number(document.getElementById("price").value);
+                    let total = 0;
+
+                    if(document.getElementById("traveler").value == "" || 
+                    document.getElementById("price").value == ""){
+
+                        document.getElementById("total").innerHTML = "0";
+
+                    }
+    
+                    else if(travelers <= 0 || price <= 0){
+
+                        document.getElementById("total").innerHTML = "0";
+
+                    }
+    
+                    else{
+
+                        total = travelers * price;
+
+                        document.getElementById("total").innerHTML =
+                        "Total Trip Cost: $" + total;
+
+                    }
+
+                }
+
+                </script>
+
+        </section>
+
+        <br><br>
+
+        <section id="discount">
+
+            <h2>Discount Checker</h2>
+
+            <label>Total Amount</label>
+            
+            <br>
+
+            <input 
+            type="number" 
+            name="amount" 
+            id="amount">
+            
+            <br><br>
+
+            <button onclick="checkDiscount()">Check Discount</button>
+
+            <h3 id="discountResult"></h3>
+
+            <script>
+
+                function checkDiscount(){
+
+                    let amount = Number(document.getElementById("amount").value);
+
+                    let message = "";
+
+                    if(amount >= 20000){
+
+                        message = "15% Discount";
+
+                    }
+
+                    else if(amount >= 10000){
+
+                        message = "10% Discount";
+
+                    }
+
+                    else if(amount >= 5000){
+
+                        message = "5% Discount";
+
+                    }
+
+                    else{
+
+                        message = "No Discount";
+
+                    }
+
+                    document.getElementById("discountResult").innerHTML = message;
+
+                }
+
+            </script>
+
+        </section>
+
+        <br><br>
+
+        <section id="countdown">
+
+            <h2>Travel Countdown</h2>
+
+            <label>Days Before Your Trip</label>
+            
+            <br>
+
+            <input 
+            type="number" 
+            name="days" 
+            id="days">
+            
+            <br><br>
+
+            <button onclick="travelCountdown()">Start Countdown</button>
+
+            <div id="result"></div>
+
+            <script>
+
+                function travelCountdown(){
+
+                    let days = Number(document.getElementById("days").value);
+
+                    let output = "";
+
+                    if(days <= 0){
+
+                        output = "Please enter a valid number.";
+
+                    }
+
+                    else{
+
+                        for(let i = days; i >= 1; i--){
+
+                            output += "Day " + i + " until your trip!<br>";
+
+                        }
+
+                        output += "<br>Have a wonderful vacation!";
+
+                    }
+
+                    document.getElementById("result").innerHTML = output;
+
+                }
+
+            </script>
+
+        </section>
+
+    </body>
+
+</html>
